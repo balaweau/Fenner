@@ -1,0 +1,100 @@
+:root {
+	--color-primary: #00578D !important;
+	--color-primary-hover: #0086D9 !important;
+	--color-secondary: #00385A !important;
+	--color-secondary-hover: #419FD9 !important;
+	--color-text-primary: #424242 !important;
+	--color-gray-extralight: #9E9E9E !important;
+	--color-gray-light: #757575 !important;
+	--color-gray-medium: #616161 !important;
+	--color-gray-dark: #212121 !important;
+	--color-offwhite: #FAFAFA !important;
+	--color-offwhite-hover: #F5F5F5 !important;
+	--height-navbar: 6.1875rem;
+	--height-content: calc( 100vh - var(--height-navbar) );
+
+};
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Open+Sans');
+
+h1 {
+	font-family: 'Merriweather', serif !important;
+	font-weight: 700 !important;
+	font-size: 2.5rem !important;
+	color: var(--color-primary) !important;
+}
+
+h2 {
+	font-family: 'Merriweather', serif !important;
+	font-weight: 700 !important;
+	font-size: 2rem !important;
+	color: var(--color-primary) !important;
+}
+
+h2.gray {
+	font-family: 'Merriweather', serif !important;
+	font-weight: 700 !important;
+	font-size: 2rem !important;
+	color: var(--color-text-primary) !important;
+}
+
+h3 {
+	font-family: 'Merriweather', serif !important;
+	font-weight: 700 !important;
+	font-size: 1.5rem !important;
+	color: var(--color-text-primary) !important;
+}
+
+h4 {
+	font-family: 'Merriweather', serif !important;
+	font-weight: 700 !important;
+	font-size: 1.25rem !important;
+	color: var(--color-text-primary) !important;
+}
+
+h5 {
+	font-family: 'Merriweather', serif !important;
+	font-weight: 700 !important;
+	font-size: 1.125rem !important;
+	color: var(--color-text-primary) !important;
+}
+
+h6 {
+	font-family: 'Merriweather', serif !important;
+	font-weight: 700 !important;
+	font-size: 1rem !important;
+	color: var(--color-text-primary) !important;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400 !important;
+	font-size: 1rem !important;
+	color: var(--color-text-primary) !important;
+}
+
+body {
+	color: var(--color-text-primary);
+	font-family: "Open Sans", sans-serif !important;
+	font-size: 1rem !important;
+	background-color: var(--color-offwhite);
+}
+
+a {
+	color: var(--color-secondary) !important;
+	text-decoration: none !important;
+}
+
+.btn-primary {
+	background-color: var(--color-primary) !important;
+	border-color: var(--color-primary) !important;
+}
+
+.btn-primary.active, .btn-primary:active, .btn-primary:hover {
+	background-color: var(--color-primary-hover) !important;
+	border-color: var(--color-primary-hover) !important;
+}
+
+.w-100p {
+  width: 100px !important;
+}
