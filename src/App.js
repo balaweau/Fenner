@@ -67,7 +67,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h4 className='m-4'>Search Rest Services</h4>
+        <h4 className='m-4'>API Search</h4>
         <Form id='formone' onSubmit={this.searchOne} >
           <Row className='m-2'>
         <Input className='w-50 m-3' type='text' id='searchone' defaultValue={this.state.uri1} onChange={this.searchOneChange}></Input>

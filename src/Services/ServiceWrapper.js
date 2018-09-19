@@ -1,14 +1,9 @@
 import { hasData } from '../Utils/text';
-import PropTypes from 'prop-types';
-
-// const COMPANY = 'http://development-877370342.us-west-2.elb.amazonaws.com';
-const COMPANY = 'http://localhost:3004/company';
 
 const GET = 'get';
 const DELETE = 'delete';
 const POST = 'post';
 const PUT = 'put';
-
 const MOSTTYPES = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8';
 
 export const postData = (uri, body) => {
@@ -38,10 +33,11 @@ export const deleteData = (uri, id) => {
   return GenericService({uri: uri+query, method: DELETE, contentType: MOSTTYPES});
 }
 
+//apb - consider switching back to axios if a timeout is required for the fetch
 async function GenericService(props) {
   let param = {
     method: props.method,
-    headers: {}
+    headers: {},
   };
 
   if (hasData(props.body)) {
@@ -51,11 +47,13 @@ async function GenericService(props) {
       'Accepts': MOSTTYPES
     };
   }
+  param.headers.mode = 'no-cors';
 
-  if (hasData(props.mode)) {
-    param.headers.mode = props.mode;
-  }
+  // if (hasData(props.mode)) {
+    //  param.headers.mode = props.mode;
+  // }
 
+  //refac
   return (
     fetch(props.uri, param)
     .then(response => {
@@ -73,6 +71,7 @@ async function GenericService(props) {
       }
     }).catch(error => {
       console.log(error);
+      throw error;
     })
   )
 };
