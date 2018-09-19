@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {hasData, titleCase} from '../../Utils/text';
+import {hasData, titleCase, isObject} from '../../Utils/text';
 import {Table} from 'reactstrap';
 import './Table.css';
-
 
 //Will auto-populate with data retrieved from the given uri
 //Attempts to format the header from the column names, but can be passed a header array instead.
@@ -46,7 +45,7 @@ class TableComponent extends Component {
     });
   }
 
-  getData(params = null) {
+  getData() {
     this.props.service(this.props.uri, this.props.filter)
     .then(response => {
       this.parseData(response);
@@ -74,7 +73,10 @@ class TableComponent extends Component {
 
       let children = [];
       for (let field in rec) {
-        children.push(<td key={field}>{rec[field]}</td>);
+        if(!isObject(rec[field]))
+          children.push(<td key={field}>{rec[field]}</td>);
+        else
+          children.push(<td key={field}>{`${field} [Object]`}</td>);
       }
       table.push(<tbody key={rec[this.props.id]}><tr>{children}</tr></tbody>);
     }

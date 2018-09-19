@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {getData} from './Services/ServiceWrapper';
 import TableComponent from './Common/Table/Table';
-import {H5, Button, Form, Input, Row} from 'reactstrap';
+import {Button, Form, Input, Row} from 'reactstrap';
 import { hasData, getEndpoint } from './Utils/text';
 import './App.css';
 
@@ -32,7 +32,7 @@ class App extends Component {
 
     this.setState({
       endpoint1: getEndpoint(this.state.uri1),
-      refresh1: !this.state.refresh1,
+      refresh1: !this.state.refresh1, //refac
     })
   }
 
